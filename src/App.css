@@ -1,0 +1,127 @@
+.app-page {
+  height: 100%;
+}
+
+.content-body {
+  height: calc(100% - 5px);
+  overflow: auto;
+}
+
+.content-box {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 600px;
+  line-height: 1.5;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 20px 20px 0 20px;
+}
+
+.content-box-left {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 150px;
+  min-width: 200px;
+}
+
+.content-box-image {
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.content-box-right {
+  font-size: 17px;
+  min-width: 0;
+}
+
+.content-box-title {
+  font-weight: 600;
+  height: 76px;
+  display: inline;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+.content-box-path {
+  color: gray;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.loader-ellipse {
+  font-size: 22px;
+  position: relative;
+  width: 4em;
+  height: 1em;
+  margin: 10px auto;
+  margin-top: -20px;
+}
+
+.loader-ellipse__dot {
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background: #555; /* change color here */
+  position: absolute;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.loader-ellipse__dot:nth-child(1),
+.loader-ellipse__dot:nth-child(2) {
+  left: 0;
+}
+.loader-ellipse__dot:nth-child(3) {
+  left: 1.5em;
+}
+.loader-ellipse__dot:nth-child(4) {
+  left: 3em;
+}
+
+@keyframes reveal {
+  from {
+    transform: scale(0.001);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes slide {
+  to {
+    transform: translateX(1.5em);
+  }
+}
+
+.loader-ellipse__dot:nth-child(1) {
+  animation-name: reveal;
+}
+
+.loader-ellipse__dot:nth-child(2),
+.loader-ellipse__dot:nth-child(3) {
+  animation-name: slide;
+}
+
+.loader-ellipse__dot:nth-child(4) {
+  animation-name: reveal;
+  animation-direction: reverse;
+}
+
+@media (max-width: 600px) {
+  .content-box {
+    width: 100%;
+  }
+  .content-box-left {
+    height: 105px;
+    min-width: 127px;
+  }
+}
